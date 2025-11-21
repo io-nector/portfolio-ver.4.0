@@ -1,0 +1,728 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    // scroll-behavior: smooth;
+}
+
+:root {
+    --bg-dark: #040b14;
+    --bg-light: white;
+
+    --accent-color: #149ddd;
+
+    --light-font-color: rgb(255, 255, 255);
+    --medium-font-color: #a8a9b4;
+    --font-color-dark: #040b14;
+
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+@mixin fade-in-animation {
+    opacity: 0;
+    transform: translateY(500px);
+    transition: opacity 0.6s,
+        transform 0.6s;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.constant-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.6rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: var(--default-font);
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        background-color: #117a8b;
+    }
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+
+    position: relative;
+
+    background-color: var(--bg-light);
+    padding-left: 30rem;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 30rem;
+    // background-color: rgba(0, 0, 255, 0.108);
+    background-color: var(--bg-dark);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile-pic {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+        margin: 2rem auto;
+        overflow: hidden;
+
+
+        border: 8px solid color-mix(in srgb, white, transparent 85%);
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+    }
+
+    .profile-name {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        width: 100%;
+        flex-grow: 1;
+
+        ul {
+            height: 100%;
+            list-style: none;
+            padding: 0 0 20px 0;
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+
+            li {
+                width: 100%;
+                padding: 15px 20px;
+                align-items: center;
+                display: flex;
+
+                .material-symbols-outlined {
+                    color: var(--medium-font-color);
+                    font-size: 2.4rem;
+                    font-variation-settings: 'wght' 200;
+                }
+
+                .lucide {
+                    /* Change this! */
+                    color: #ffffff;
+                    width: 30p;
+                    height: 30px;
+                    stroke-width: 1px;
+                }
+
+
+                a {
+                    color: var(--medium-font-color);
+                    padding: 15px 10px;
+                    font-family: var(--nav-font);
+                    font-size: 16px;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    white-space: nowrap;
+                    transition: 0.3s;
+                    width: 100%;
+                    text-decoration: none;
+
+
+
+                    &:hover {
+                        color: #007BFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/images/profile_2_edit.jpg");
+    //this line is causing the backround to offset from center - need to fix
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    padding-left: 20px;
+
+    background-color: black;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        background:
+            color-mix(in srgb, black, transparent 70%);
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+    }
+
+    h1 {
+        font-family: var(--default-font);
+        color: var(--light-font-color);
+        font-size: 6.4rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 3;
+    }
+
+    p {
+        font-family: var(--default-font);
+        color: var(--light-font-color);
+        font-size: 3rem;
+        font-weight: 400;
+        position: relative;
+        z-index: 3;
+    }
+}
+
+// section heading for all sections
+.section-heading {
+    width: 100%;
+    height: fit-content;
+    font-family: var(--default-font);
+    color: var(--font-color-dark);
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    padding-bottom: 20px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: var(--accent-color);
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    @include fade-in-animation;
+}
+
+// general text style for all sections
+.general-text {
+    width: 90%;
+    font-family: var(--default-font);
+    color: var(--font-color-dark);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    @include fade-in-animation;
+}
+
+//h3 for all sections
+.general-h3 {
+    font-family: var(--default-font);
+    color: var(--font-color-dark);
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+//gen section for non-card sections
+.general-section {
+    height: 100vh;
+    width: 100%;
+    padding: 6rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+    background-color: var(--bg-light);
+}
+
+
+
+.form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 6rem 1.5rem;
+
+
+    @include fade-in-animation;
+
+
+    .form-header {
+        width: 100%;
+        height: fit-content;
+        font-family: var(--default-font);
+        color: var(--font-color-dark);
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        padding-bottom: 20px;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            left: 0;
+            bottom: 0;
+            z-index: 10;
+        }
+    }
+
+    p {
+
+        font-family: var(--default-font);
+        color: gray;
+        font-size: 1.6rem;
+        // font-weight: 400;
+        // line-height: 1.5;
+        margin-bottom: 2rem;
+        text-align: left;
+        width: 100%;
+
+        // padding-left: -6rem;
+    }
+
+    form {
+        max-width: 600px;
+        // margin: 0 auto;
+        padding: 2rem;
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            .form-row {
+                display: flex;
+                gap: 1rem;
+
+                .col {
+                    flex: 1;
+                }
+            }
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.6rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--default-font);
+
+            &:focus {
+                outline: none;
+                border-color: var(--accent-color);
+            }
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #117a8b;
+            }
+        }
+    }
+
+
+
+    .form-helper-buttons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        button {
+            padding: 0.8rem 1.2rem;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #117a8b;
+            }
+        }
+    }
+}
+
+
+//for profile section - nested in general-section
+.profile-image-container {
+    width: 100%;
+    padding: 40px;
+    @include fade-in-animation;
+
+    display: flex;
+
+    gap: 30px;
+
+    .profile-image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .profile-text {
+        width: 80%;
+        height: 100%;
+        padding: 20px;
+        padding-right: 100px;
+
+        h3 {
+            font-family: var(--default-font);
+            color: var(--font-color-dark);
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            width: fit-content;
+            font-family: var(--default-font);
+            color: var(--font-color-dark);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-p {
+            width: fit-content;
+            font-family: var(--default-font);
+            color: var(--font-color-dark);
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+    }
+
+}
+
+.section-with-cards {
+    min-height: 100vh;
+    width: 100%;
+    padding: 6rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+    background-color: var(--bg-light);
+
+
+    .cards-container {
+        width: 100%;
+
+        margin-top: 4rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        flex-grow: 1.5;
+        flex-shrink: 1;
+
+        @include fade-in-animation;
+
+
+        .text-card {
+            width: calc(30%);
+            background-color: var(--bg-light);
+            color: var(--font-color-dark);
+
+            display: flex;
+            flex-grow: 1;
+
+            cursor: pointer;
+            text-decoration: none;
+
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+
+
+            .icon-box {
+                height: 50px;
+                width: 50px;
+                flex-shrink: 0;
+
+                margin: 10px;
+
+                border-radius: 50%;
+
+                background-color: var(--accent-color);
+                border: solid 2px var(--accent-color);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+                -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+                //icon styles for cards - nav is set in navbar
+                .lucide {
+                    /* Change this! */
+                    color: #ffffff;
+                    width: 30p;
+                    height: 30px;
+                    stroke-width: 1px;
+                    transition: color 0.3s ease-in-out;
+                    -webkit-transition: color 0.3s ease-in-out;
+                }
+            }
+
+            &:hover {
+                .icon-box {
+                    background-color: var(--bg-light);
+                    border: solid 2px var(--accent-color);
+
+                    .lucide {
+                        /* Change this! */
+                        color: var(--accent-color);
+                        width: 30p;
+                        height: 30px;
+                        stroke-width: 1px;
+                    }
+                }
+
+                .text-box {
+                    h3 {
+                        color: var(--accent-color);
+                    }
+                }
+            }
+
+            .text-box {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                font-family: var(--default-font);
+
+                h3 {
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                    transition: color 0.3s ease-in-out;
+                    -webkit-transition: color 0.3s ease-in-out;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    line-height: 1.6;
+                    color: var(--font-color-dark);
+                    opacity: 1;
+                    transform: none;
+                    transition: none;
+                }
+            }
+        }
+
+        .image-card {
+            width: calc(48%);
+            background-color: var(--bg-light);
+            color: var(--font-color-dark);
+
+            display: flex;
+            flex-direction: column;
+            // cursor: pointer;
+            text-decoration: none;
+
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+
+            position: relative;
+
+
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+
+                transition: transform 0.3s ease-in-out;
+
+            }
+
+            .image-card-title {
+                font-family: var(--default-font);
+                font-size: 1.8rem;
+                font-weight: 600;
+                padding: 1rem 1rem 0 1rem;
+
+                z-index: 300;
+
+                transition: color 0.3s ease-in-out;
+                -webkit-transition: color 0.3s ease-in-out;
+                -moz-transition: color 0.3s ease-in-out;
+                -o-transition: color 0.3s ease-in-out;
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .image-info {
+                width: 105%;
+                height: 105%;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.418);
+                opacity: 0;
+                z-index: 200;
+                transition: opacity 0.3s ease-in-out;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+
+                button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+
+                    .lucide {
+                        /* Change this! */
+                        color: #ffffff;
+                        width: 36px;
+                        height: 36px;
+                        stroke-width: 2px;
+                    }
+                }
+
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+
+                .image-card-title {
+                    color: var(--light-font-color);
+                    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                }
+
+                .image-info {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.popup {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    align-items: center;
+    justify-content: center;
+
+    // padding: 20vh 20vw 20vh 20vw;
+
+    z-index: 1000;
+
+    .popup-content {
+        // margin: auto;
+
+        width: 80%;
+        height: 80%;
+        background-color: var(--bg-light);
+        padding: 2rem;
+        position: relative;
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
