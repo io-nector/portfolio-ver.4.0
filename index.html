@@ -20,10 +20,12 @@
 </head>
 
 <body>
-    <div class="constant-bubble animate__animated animate__pulse animate__infinite animate__slower">
-        <a href="tel:7149864317">Call to Get Started</a>
+    <div class="constant-bubble" id="startNowBubble">
+        <a href="#formContainer">Let's get started!</a>
     </div>
-    <div class="navbar">
+
+    <!-- Desktop nav -->
+    <div class="desktop-navbar">
         <div class="profile-pic">
             <img src="/images/profile_2_edit.jpg" alt="Dean Watson Profile Picture`">
         </div>
@@ -62,11 +64,12 @@
                     <a href="#about">
                         About Me
                     </a>
-                    <!-- contact -->
+                </li>
+                <!-- contact -->
                 <li>
                     <i data-lucide="smartphone">
                     </i>
-                    <a href="#contact">
+                    <a href="#formContainer">
                         Contact
                     </a>
                 </li>
@@ -80,6 +83,128 @@
                 </li>
             </ul>
         </nav>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-navbar">
+
+        <div class="profile-name">Dean Watson</div>
+
+        <nav>
+            <!-- <div class="logo">
+                <img src="assets/Logo64x64.png" alt="logo" />
+                <h1>LOGO</h1>
+            </div> -->
+            <ul>
+                <!-- Home -->
+                <li>
+                    <i data-lucide="house">
+                        Home
+                    </i>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+                <!-- Services -->
+                <li>
+                    <i data-lucide="monitor-cloud">
+                    </i>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+                <!-- Portfolio -->
+                <li>
+                    <i data-lucide="monitor-smartphone">
+                    </i>
+                    <a href="#portfolio">
+                        Portfolio
+                    </a>
+                </li>
+                <!-- about me -->
+                <li>
+                    <i data-lucide="circle-user-round">
+                    </i>
+                    <a href="#about">
+                        About Me
+                    </a>
+                </li>
+                <!-- contact -->
+                <li>
+                    <i data-lucide="smartphone">
+                    </i>
+                    <a href="#formContainer">
+                        Contact
+                    </a>
+                </li>
+                <!-- Blog -->
+                <li>
+                    <i data-lucide="book-open">
+                    </i>
+                    <a href="#blog">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </nav>
+        <div class="menubar">
+            <ul>
+                <!-- Home -->
+                <li>
+                    <i data-lucide="house">
+                        Home
+                    </i>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+                <!-- Services -->
+                <li>
+                    <i data-lucide="monitor-cloud">
+                    </i>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+                <!-- Portfolio -->
+                <li>
+                    <i data-lucide="monitor-smartphone">
+                    </i>
+                    <a href="#portfolio">
+                        Portfolio
+                    </a>
+                </li>
+                <!-- about me -->
+                <li>
+                    <i data-lucide="circle-user-round">
+                    </i>
+                    <a href="#about">
+                        About Me
+                    </a>
+                </li>
+                <!-- contact -->
+                <li>
+                    <i data-lucide="smartphone">
+                    </i>
+                    <a href="#formContainer">
+                        Contact
+                    </a>
+                </li>
+                <!-- Blog -->
+                <li>
+                    <i data-lucide="book-open">
+                    </i>
+                    <a href="#blog">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 
 
@@ -105,7 +230,8 @@
                 <div class="text-box">
                     <h3>Static Website Development</h3>
                     <p>
-                        Static websites are just that - static. This option allows you to have a consistent message over
+                        Static websites are just that - static. This option allows you to have a consistent message
+                        over
                         time.
                     </p>
                 </div>
@@ -134,7 +260,8 @@
                     <h3>Website Applications</h3>
                     <p>
                         This service focuses on creating web applications that are both functional and
-                        user-friendly. Whether you need a simple form or a complex web app, I can help you achieve your
+                        user-friendly. Whether you need a simple form or a complex web app, I can help you achieve
+                        your
                         goals.
                     </p>
                 </div>
@@ -202,7 +329,9 @@
                 </div>
                 <div class="image-info">
                     <button type="toggle" id="portfolioToggle01"><i data-lucide="search"></i></button>
-                    <button><i data-lucide="link"></i></button>
+                    <a href="https://roseville-notary.com/" target="_blank">
+                        <button><i data-lucide="link"></i></button>
+                    </a>
                 </div>
             </div>
 
@@ -213,7 +342,9 @@
                 </div>
                 <div class="image-info">
                     <button type="toggle" id="portfolioToggle02"><i data-lucide="search"></i></button>
-                    <button><i data-lucide="link"></i></button>
+                    <a href="https://rubios-grill.com/" target="_blank">
+                        <button><i data-lucide="link"></i></button>
+                    </a>
                 </div>
             </div>
 
@@ -224,7 +355,9 @@
                 </div>
                 <div class="image-info">
                     <button type="toggle" id="portfolioToggle03"><i data-lucide="search"></i></button>
-                    <button><i data-lucide="link"></i></button>
+                    <a href="https://mahinisushi.com/" target="_blank">
+                        <button><i data-lucide="link"></i></button>
+                    </a>
                 </div>
             </div>
 
@@ -235,24 +368,19 @@
                 </div>
                 <div class="image-info">
                     <button type="toggle" id="portfolioToggle04"><i data-lucide="search"></i></button>
-                    <button><i data-lucide="link"></i></button>
+                    <a href="http://houstonmobile.work/" target="_blank">
+                        <button><i data-lucide="link"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- about -->
-    <section class="general-section" id="about">
-        <h2 class="section-heading" id="aboutMeHeader">About Me</h2>
-        <p class="general-text" id="aboutMeParagraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
-            nam praesentium dolor dicta, dolore perspiciatis earum impedit aliquid repudiandae unde ex, nihil commodi
-            temporibus quod placeat odit repellendus reprehenderit deleniti.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et expedita eius quibusdam rem dolorum
-            quaerat, voluptas delectus autem, ipsa praesentium neque dolore quis repudiandae. Eveniet ipsam ea libero
-            earum!
-        </p>
+
+    <!-- contact -->
+    <section class="form-section" id="formContainer">
+        <!-- <div class="container"> -->
+        <h1 class="form-header">Contact Me</h1>
 
         <div class="profile-image-container" id="aboutMeProfileContainer">
             <img src="/images/profile_2_edit.jpg" alt="Profile Image" class="profile-image">
@@ -261,29 +389,29 @@
                 <p class="profile-p">Web Developer</p>
                 <br />
                 <h4>Phone:
-                    <span class="profile-p">&emsp; +1 (714) 986-4317</span>
+                    <span class="profile-p">&emsp;
+                        <a href="tel:+17149864317">
+                            +1 (714) 986-4317
+                        </a>
+                    </span>
                 </h4>
 
                 <h4>Email:
-                    <span class="profile-p">&emsp; </span>
+                    <span class="profile-p">&emsp;
+                        <a href="mailto:dean@dean-watson.com">
+                            dean@dean-watson.com
+                        </a>
+                    </span>
                 </h4>
 
             </div>
         </div>
-    </section>
 
-    <!-- contact -->
-    <section class="form-section" id="formContainer">
-        <!-- <div class="container"> -->
-        <h1 class="form-header">Contact Me</h1>
 
-        <p id="contactMeParagraph">No email goes unanswered, if you email me using this form I will reply within 48hrs.
-            <br /> <br /> if you
-            would like me to contact you ASAP, include this in your message and I will call you same day - or give me
-            a call.
-        </p>
-
-        <form target="_blank" action="https://formsubmit.co/ionector@gmail.com" method="POST" id="contactMeForm">
+        <form target="_blank" action="https://formsubmit.co/dean@dean-watson.com" method="POST" id="contactMeForm">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <!-- <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"> -->
             <div class="form-group">
                 <div class="form-row">
                     <div class="col">
@@ -298,25 +426,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                <textarea placeholder="Please enter your message here..." class="form-control" name="message" rows="10"
+                    required></textarea>
             </div>
             <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
         </form>
-        <!-- </div> -->
-        <div class="form-helper-buttons" id="contactMeHelperButtons">
-            <button type="button"
-                onclick="document.querySelector('textarea[name=message]').value='I need a site, and I don\'t know where to start.'">Need
-                Help Starting</button>
-            <button type="button"
-                onclick="document.querySelector('textarea[name=message]').value='I need a site and would like to schedule a consultation.'">Schedule
-                Consultation</button>
-            <button type="button"
-                onclick="document.querySelector('textarea[name=message]').value='I would like to update my site.'">Update
-                my site</button>
-            <button type="button"
-                onclick="document.querySelector('textarea[name=message]').value='I would like to build my own site and would like some help on the build/ deployment'">Build
-                my own site</button>
-        </div>
+
 
 
     </section>
@@ -388,9 +503,9 @@
         //---------------------
 
         //about me objects-----
-        const aboutMeHeader = document.getElementById('aboutMeHeader');
-        const aboutMeParagraph = document.getElementById('aboutMeParagraph');
-        const aboutMeProfileContainer = document.getElementById('aboutMeProfileContainer');
+        // const aboutMeHeader = document.getElementById('aboutMeHeader');
+        // const aboutMeParagraph = document.getElementById('aboutMeParagraph');
+        // const aboutMeProfileContainer = document.getElementById('aboutMeProfileContainer');
         //---------------------
 
 
@@ -402,9 +517,9 @@
         observer.observe(portfolioHeader);
         observer.observe(portfolioParagraph);
 
-        observer.observe(aboutMeHeader);
-        observer.observe(aboutMeParagraph);
-        observer.observe(aboutMeProfileContainer);
+        // observer.observe(aboutMeHeader);
+        // observer.observe(aboutMeParagraph);
+        // observer.observe(aboutMeProfileContainer);
 
         const formContainer = document.getElementById('formContainer');
 
@@ -459,6 +574,23 @@
 
 
     </script>
+
+    <!-- mobile menu script -->
+    <!-- https://codesandbox.io/p/sandbox/responsive-navbar-html-css-js-1t4um7?file=%2Fscript.js%3A1%2C1-9%2C1 -->
+    <script>
+        const mobileNav = document.querySelector(".hamburger");
+        const navbar = document.querySelector(".menubar");
+
+        const toggleNav = () => {
+            navbar.classList.toggle("active");
+            mobileNav.classList.toggle("hamburger-active");
+        };
+        mobileNav.addEventListener("click", () => toggleNav());
+
+
+    </script>
+
+
 
 
     <!-- https://lucide.dev/guide/packages/lucide -->
