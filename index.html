@@ -209,8 +209,8 @@
 
 
     <section class="hero" id="home">
-        <h1 class="animate__animated animate__backInRight">Dean Watson</h1>
-        <p class="animate__animated animate__backInRight">Website Development</p>
+        <h1 class="animate__animated animate__backInRight">WEBSITE DEVELOPMENT</h1>
+        <p class="animate__animated animate__backInRight">Build a site that stands out</p>
     </section>
 
     <!-- Services section -->
@@ -585,9 +585,18 @@
             navbar.classList.toggle("active");
             mobileNav.classList.toggle("hamburger-active");
         };
+
         mobileNav.addEventListener("click", () => toggleNav());
 
-
+        // Close menu when clicking a link
+        const menuLinks = document.querySelectorAll(".menubar a");
+        menuLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (navbar.classList.contains("active")) {
+                    toggleNav();
+                }
+            });
+        });
     </script>
 
 
@@ -596,13 +605,7 @@
     <!-- https://lucide.dev/guide/packages/lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        lucide.createIcons();
-    </script>
-
-    <!-- script to pre populate message box in form-->
-    <script>
-
-
+        lucide.createIcons(); 
     </script>
 
     <script src="" async defer></script>

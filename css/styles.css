@@ -336,9 +336,10 @@ body {
     font-family: var(--default-font);
     color: var(--light-font-color);
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 200;
     position: relative;
     z-index: 3;
+    letter-spacing: 10px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -377,7 +378,7 @@ body {
     font-family: var(--default-font);
     color: var(--light-font-color);
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 200;
     position: relative;
     z-index: 3;
   }
