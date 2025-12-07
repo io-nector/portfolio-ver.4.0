@@ -608,6 +608,15 @@
         lucide.createIcons(); 
     </script>
 
+    <script>
+        //close mobile menu when x is pressed
+        const closeBtn = document.querySelector(".hamburger-active");
+        closeBtn.addEventListener("click", () => {
+            navbar.classList.remove("active");
+            mobileNav.classList.remove("hamburger-active");
+        });
+    </script>
+
     <script src="" async defer></script>
 </body>
 
