@@ -43,8 +43,10 @@
 
         .profile-name {
             font-size: 2.4rem;
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 0.5rem;
+            color: var(--medium-font-color);
+            font-family: var(--default-font);
         }
 
         nav {

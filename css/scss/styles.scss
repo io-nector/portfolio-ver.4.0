@@ -115,13 +115,15 @@ body {
     overflow-x: hidden;
 }
 
+//hero for desktop
 @media screen and (min-width: 767px) {
     .hero {
         position: relative;
         width: 100%;
         height: 100vh;
 
-        background-image: url("/images/profile_2_edit.jpg");
+        background-image: url("/images/hero4.jpg");
+
         //this line is causing the backround to offset from center - need to fix
         background-attachment: fixed;
         background-position: center;
@@ -211,7 +213,7 @@ body {
         h1 {
             font-family: var(--default-font);
             color: var(--light-font-color);
-            font-size: 6.4rem;
+            font-size: 5rem;
             font-weight: 600;
             position: relative;
             z-index: 3;
