@@ -22,17 +22,17 @@
         overflow-y: scroll;
 
         .profile-pic {
-            height: 15rem !important;
-            width: 15rem !important;
+            height: auto !important;
+            width: 100% !important;
             min-width: 15rem;
             min-height: 15rem;
             flex-shrink: 0;
-            border-radius: 50%;
+            // border-radius: 50%;
             margin: 2rem auto;
             overflow: hidden;
 
 
-            border: 8px solid color-mix(in srgb, white, transparent 85%);
+            // border: 8px solid color-mix(in srgb, white, transparent 85%);
 
             img {
                 height: 100%;
@@ -47,6 +47,11 @@
             margin-bottom: 0.5rem;
             color: var(--medium-font-color);
             font-family: var(--default-font);
+
+
+            height: auto;
+            height: fit-content;
+
         }
 
         nav {
@@ -129,16 +134,18 @@
 
         z-index: 1002;
 
-        .profile-name {
-            font-size: 3.0rem;
-            font-weight: 600;
-            color: var(--light-font-color);
-            // background: linear-gradient(to right, #8084cc 0%, #ccd9fd 100%);
-            // -webkit-background-clip: text;
-            // background-clip: text;
-            // -webkit-text-fill-color: transparent;
-            font-family: var(--default-font);
-            width: 100%;
+        // .profile-name {
+        //     font-size: 3.0rem;
+        //     font-weight: 600;
+        //     color: var(--light-font-color);
+
+        //     font-family: var(--default-font);
+        //     width: 100%;
+        // }
+
+        .header-logo {
+            width: auto;
+            height: 100%;
         }
     }
 
